@@ -1,0 +1,27 @@
+ /*remove default padding and margin*/
+* {
+	margin: 0px;
+	padding: 0px;
+} 
+body {
+	margin: 10px;
+  	padding: 10px;
+}
+
+a {
+	text-decoration: none;
+	color:#444;
+	}
+a:hover{
+	text-decoration: none;
+	color:#999;
+}
+
+li{
+	list-style-type: none;
+}
+
+.treatment{
+	width: 250px;
+	padding: 20px;
+}

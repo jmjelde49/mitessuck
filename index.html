@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- This file is a standard boilerplate for html files. It includes an associated css file -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--  compiled and minified bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<!-- jQuery library, required by bootstrap -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<!-- include associated css file -->
+	<link rel="stylesheet" href="css/mitesSuck.css">
+	<title>MitesSuck</title>
+</head>
+<body>
+	<main>
+		<h1>Mites Suck</h1>
+		<hr>
+		<form id="input_form">
+			<div>
+				<label for="hives-input">Number of Hives in Apiary</label>
+				<input type="number" id="hives-input" name="hives" min="0">
+			</div>
+			<div>
+				<label for="load-input">Mite Load for Colony 1</label>
+				<input type="number" id="load-input" name="load" min="0">
+			</div>
+			<div>
+				<label for="zip-input">Zip code of apiary</label>
+				<input type="number" id="zip-input" name="zip" min="0" value="27403">
+			</div>
+			<div>
+				<input type="checkbox" id="supers-input" name="supers" value="yes">Are honey supers present?</input>
+			</div>
+
+			<div>
+				<input type="checkbox" id="brood-input" name="brood" value="yes">Is Brood present?</input>
+			</div><div>
+				<input type="checkbox" id="organic-input" name="organic" value="yes">Are you open to non-organic treatments?</input>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>	
+		</form>
+		<h4>
+		<section id="output_form">
+			<h1>Available Treatments</h1>
+			<div class="treatment well">
+				<h2>Treatment</h2>
+				<ul>
+					<li id="description">Description</li>
+					<li id="instructions">Instructions for use</li>
+					<li id="video">Video</li>
+					<li id="faq">Company FAQ</li>
+					<li id="more">More information</li>
+				</ul>
+				
+			</div>
+		</section>
+	</main>
+	<hr>
+	<footer id="footer">
+		<p>Probably should put some contact information here.</p>
+	</footer>
+</body>
+</html>
