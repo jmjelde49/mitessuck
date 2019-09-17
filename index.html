@@ -17,6 +17,7 @@
 	<main>
 		<h1>Mites Suck</h1>
 		<hr>
+
 		<form id="input_form">
 			<div>
 				<label for="hives-input">Number of Hives in Apiary</label>
@@ -31,21 +32,24 @@
 				<input type="number" id="zip-input" name="zip" min="0" value="27403">
 			</div>
 			<div>
-				<input type="checkbox" id="supers-input" name="supers" value="yes">Are honey supers present?</input>
+				<input type="checkbox" id="supers-input" name="supers" value="yes">
+				<label>Are honey supers present?</label>
 			</div>
-
 			<div>
-				<input type="checkbox" id="brood-input" name="brood" value="yes">Is Brood present?</input>
-			</div><div>
-				<input type="checkbox" id="organic-input" name="organic" value="yes">Are you open to non-organic treatments?</input>
+				<input type="checkbox" id="brood-input" name="brood" value="yes">
+				<label>Is Brood present?</label>
+			</div>
+			<div>
+				<input type="checkbox" id="organic-input" name="organic" value="yes">
+				<label>Are you open to non-organic treatments?</label>
 			</div>
 			<button type="submit" class="btn btn-default">Submit</button>	
 		</form>
-		<h4>
+
 		<section id="output_form">
-			<h1>Available Treatments</h1>
+			<h2>Available Treatments</h2>
 			<div class="treatment well">
-				<h2>Treatment</h2>
+				<h3>Treatment</h3>
 				<ul>
 					<li id="description">Description</li>
 					<li id="instructions">Instructions for use</li>
@@ -53,10 +57,10 @@
 					<li id="faq">Company FAQ</li>
 					<li id="more">More information</li>
 				</ul>
-				
 			</div>
 		</section>
 	</main>
+	
 	<hr>
 	<footer id="footer">
 		<p>Probably should put some contact information here.</p>
