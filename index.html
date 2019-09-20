@@ -20,32 +20,33 @@
 
 		<form id="input_form">
 			<div>
-				<label for="hives-input">Number of Hives in Apiary</label>
-				<input type="number" id="hives-input" name="hives" min="0">
-			</div>
-			<div>
-				<label for="load-input">Mite Load for Colony 1</label>
+				<label for="load-input">Mites per 300 Bees (1/2 Cup)</label>
 				<input type="number" id="load-input" name="load" min="0">
 			</div>
 			<div>
-				<label for="zip-input">Zip code of apiary</label>
+				<label for="zip-input">Zip code of Apiary</label>
 				<input type="number" id="zip-input" name="zip" min="0" value="27403">
 			</div>
 			<div>
-				<input type="checkbox" id="supers-input" name="supers" value="yes">
-				<label>Are honey supers present?</label>
+				<label>Are Honey Supers Present?</label>
+				<input type="radio" id="supers-input" name="supers" value="yes">Yes
+				<input type="radio" id="supers-input" name="supers" value="no">No<br>
 			</div>
 			<div>
-				<input type="checkbox" id="brood-input" name="brood" value="yes">
-				<label>Is Brood present?</label>
+				<label>Is Brood Present?</label>
+				<input type="radio" id="brood-input" name="brood" value="yes">Yes
+				<input type="radio" id="brood-input" name="brood" value="no">No
+				
 			</div>
 			<div>
-				<input type="checkbox" id="organic-input" name="organic" value="yes">
-				<label>Are you open to non-organic treatments?</label>
+				<label>Are You Open to Non-Organic Treatments?</label>
+				<input type="radio" id="organic-input" name="organic" value="yes">Yes
+				<input type="radio" id="organic-input" name="organic" value="no">No
+			
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
-
+		<hr>
 		<section id="output_form">
 			<h2>Available Treatments</h2>
 			<div class="treatment card">
