@@ -38,15 +38,46 @@
 // console.log(treatmentsObject.treatmentThree)
 
 
-//Treatment options are selected based on the following variables:
+// Treatment options are selected based on the following variables:
 
 // QUESTION: Do we need to take any other variable, like season, into account?
 // TO DO: Get values for variables from input form and weather API
 
 let miteCount300 = 10;	//number of mites per 300 adult bees (1/2 cup)
-let maxTemp = 91;       //maximum temperature in x-day weather forecast
-let minTemp = 55;       //minimum termperature in x-day weather forecast
+let maxTemp = 91;       //maximum temperature in degree Fahrenheit in x-day weather forecast
+let minTemp = 55;       //minimum temperature in degree Fahrenheit in x-day weather forecast
 let honeySupers = true; //true if honey supers present
 let brood = true;       //true if brood present
 let nonOrganic = true;  //true if open to non-organic treatments
 
+
+// Available treatment options are:
+
+// TO DO: Add additional treatment options as objects to array
+
+let treatmentOptions = [
+	{
+		name: "Apivar",
+		maxTempTreatment: "none",     // "none" if treatment has no maximum temperature requirement
+		minTempTreatment: "none",     // "none" if treatment has no minimum temperature requirement
+		honeySupersTreatment: false,  // false if treatment cannot be used with honey supers present
+		broodTreatment: true,					// true if treatment can be used with brood present
+		nonOrganicTreatment: true     // true if treatment is non-organic
+	}
+	{
+		name: "Apistan",
+		maxTempTreatment: "none",
+		minTempTreatment: 50,
+		honeySupersTreatment: false,
+		broodTreatment: true,
+		nonOrganicTreatment: true
+	}
+	{
+		name: "CheckMite",
+		maxTempTreatment: "none",
+		minTempTreatment: "none",
+		honeySupersTreatment: false,
+		broodTreatment: true,
+		nonOrganicTreatment: true
+	}
+]
