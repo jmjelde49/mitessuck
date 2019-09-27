@@ -46,14 +46,15 @@
 let miteCount300 = 10;	//number of mites per 300 adult bees (1/2 cup)
 let maxTemp = 91;       //maximum temperature in degree Fahrenheit in x-day weather forecast
 let minTemp = 55;       //minimum temperature in degree Fahrenheit in x-day weather forecast
-let honeySupers = true; //true if honey supers present
+let honeySupers = false; //true if honey supers present
 let brood = true;       //true if brood present
-let nonOrganic = true;  //true if open to non-organic treatments
+let nonOrganic = false;  //true if open to non-organic treatments
 
 
 // Available treatment options are:
 
 // TO DO: Add additional treatment options as objects to array
+// TO DO: Add additional information to treatment options: description, instructions, video link,...
 
 let treatmentOptions = [
 	{
@@ -62,22 +63,66 @@ let treatmentOptions = [
 		minTempTreatment: "none",     // "none" if treatment has no minimum temperature requirement
 		honeySupersTreatment: false,  // false if treatment cannot be used with honey supers present
 		broodTreatment: true,					// true if treatment can be used with brood present
-		nonOrganicTreatment: true     // true if treatment is non-organic
-	}
+		organicTreatment: false       // true if treatment is organic
+	},
 	{
 		name: "Apistan",
 		maxTempTreatment: "none",
 		minTempTreatment: 50,
 		honeySupersTreatment: false,
 		broodTreatment: true,
-		nonOrganicTreatment: true
-	}
+		organicTreatment: false
+	},
 	{
 		name: "CheckMite",
 		maxTempTreatment: "none",
 		minTempTreatment: "none",
 		honeySupersTreatment: false,
 		broodTreatment: true,
-		nonOrganicTreatment: true
+		organicTreatment: false
+	},
+	{
+		name: "Test1",
+		maxTempTreatment: 95,
+		minTempTreatment: 60,
+		honeySupersTreatment: true,
+		broodTreatment: false,
+		organicTreatment: true
+	},
+	{
+		name: "Test2",
+		maxTempTreatment: 85,
+		minTempTreatment: 60,
+		honeySupersTreatment: true,
+		broodTreatment: true,
+		organicTreatment: true
 	}
 ]
+
+
+// Treatments are selected based on the following conditions:
+
+function checkMinTemp(option) {
+	return ((option.minTempTreatment == "none") || (option.minTempTreatment <= minTemp))
+}
+
+function checkMaxTemp(option) {
+	return ((option.maxTempTreatment == "none") || (option.maxTempTreatment <= maxTemp))
+}
+
+function checkHoneySupers(option) {
+	return (honeySupers ? option.honeySupersTreatment : true)
+}
+
+function checkBrood(option) {
+	return (brood ? option.broodTreatment : true)
+}
+
+function checkOrganic(option) {
+	return (nonOrganic ? true : option.organicTreatment)
+}
+
+let treatmentSelectionMaxTemp = treatmentOptions.filter(checkMaxTemp)
+console.log(treatmentSelectionMaxTemp)
+
+
