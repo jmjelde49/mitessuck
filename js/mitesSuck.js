@@ -43,12 +43,12 @@
 // QUESTION: Do we need to take any other variable, like season, into account?
 // TO DO: Get values for variables from input form and weather API
 
-let miteCount300 = 10;	//number of mites per 300 adult bees (1/2 cup)
-let maxTemp = 91;       //maximum temperature in degree Fahrenheit in x-day weather forecast
-let minTemp = 55;       //minimum temperature in degree Fahrenheit in x-day weather forecast
-let honeySupers = false; //true if honey supers present
-let brood = true;       //true if brood present
-let nonOrganic = false;  //true if open to non-organic treatments
+let miteCount300 = 10;		//number of mites per 300 adult bees (1/2 cup)
+let minTemp = 55;       	//minimum temperature in degree Fahrenheit in x-day weather forecast
+let maxTemp = 91;					//maximum temperature in degree Fahrenheit in x-day weather forecast
+let honeySupers = false;  //true if honey supers present
+let brood = true;       	//true if brood present
+let nonOrganic = false;   //true if open to non-organic treatments
 
 
 // Available treatment options are:
@@ -56,46 +56,46 @@ let nonOrganic = false;  //true if open to non-organic treatments
 // TO DO: Add additional treatment options as objects to array
 // TO DO: Add additional information to treatment options: description, instructions, video link,...
 
-let treatmentOptions = [
+let options = [
 	{
 		name: "Apivar",
-		maxTempTreatment: "none",     // "none" if treatment has no maximum temperature requirement
-		minTempTreatment: "none",     // "none" if treatment has no minimum temperature requirement
-		honeySupersTreatment: false,  // false if treatment cannot be used with honey supers present
-		broodTreatment: true,					// true if treatment can be used with brood present
-		organicTreatment: false       // true if treatment is organic
+		minTemp: "none",     // "none" if treatment has no minimum temperature requirement
+		maxTemp: "none",     // "none" if treatment has no maximum temperature requirement
+		honeySupers: false,  // false if treatment cannot be used with honey supers present
+		brood: true,				 // true if treatment can be used with brood present
+		organic: false       // true if treatment is organic
 	},
 	{
 		name: "Apistan",
-		maxTempTreatment: "none",
-		minTempTreatment: 50,
-		honeySupersTreatment: false,
-		broodTreatment: true,
-		organicTreatment: false
+		minTemp: 50,
+		maxTemp: "none",
+		honeySupers: false,
+		brood: true,
+		organic: false
 	},
 	{
 		name: "CheckMite",
-		maxTempTreatment: "none",
-		minTempTreatment: "none",
-		honeySupersTreatment: false,
-		broodTreatment: true,
-		organicTreatment: false
+		minTemp: "none",
+		maxTemp: "none",
+		honeySupers: false,
+		brood: true,
+		organic: false
 	},
 	{
 		name: "Test1",
-		maxTempTreatment: 95,
-		minTempTreatment: 60,
-		honeySupersTreatment: true,
-		broodTreatment: false,
-		organicTreatment: true
+		minTemp: 60,
+		maxTemp: 95,
+		honeySupers: true,
+		brood: false,
+		organic: true
 	},
 	{
 		name: "Test2",
-		maxTempTreatment: 85,
-		minTempTreatment: 60,
-		honeySupersTreatment: true,
-		broodTreatment: true,
-		organicTreatment: true
+		minTemp: 60,
+		maxTemp: 85,		
+		honeySupers: true,
+		brood: true,
+		organic: true
 	}
 ]
 
@@ -103,26 +103,26 @@ let treatmentOptions = [
 // Treatments are selected based on the following conditions:
 
 function checkMinTemp(option) {
-	return ((option.minTempTreatment == "none") || (option.minTempTreatment <= minTemp))
+	return ((option.minTemp == "none") || (option.minTemp <= minTemp))
 }
 
 function checkMaxTemp(option) {
-	return ((option.maxTempTreatment == "none") || (option.maxTempTreatment <= maxTemp))
+	return ((option.maxTemp == "none") || (option.maxTemp <= maxTemp))
 }
 
 function checkHoneySupers(option) {
-	return (honeySupers ? option.honeySupersTreatment : true)
+	return (honeySupers ? option.honeySupers : true)
 }
 
 function checkBrood(option) {
-	return (brood ? option.broodTreatment : true)
+	return (brood ? option.brood : true)
 }
 
 function checkOrganic(option) {
-	return (nonOrganic ? true : option.organicTreatment)
+	return (nonOrganic ? true : option.organic)
 }
 
-let treatmentSelectionMaxTemp = treatmentOptions.filter(checkMaxTemp)
-console.log(treatmentSelectionMaxTemp)
+let selectionMaxTemp = options.filter(checkMaxTemp)
+console.log(selectionMaxTemp)
 
 
