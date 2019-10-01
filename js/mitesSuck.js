@@ -47,7 +47,7 @@ let miteCount300 = 10;		//number of mites per 300 adult bees (1/2 cup)
 let minTemp = 55;       	//minimum temperature in degree Fahrenheit in x-day weather forecast
 let maxTemp = 91;					//maximum temperature in degree Fahrenheit in x-day weather forecast
 let honeySupers = false;  //true if honey supers present
-let brood = true;       	//true if brood present
+let brood = false;       	//true if brood present
 let nonOrganic = false;   //true if open to non-organic treatments
 
 
@@ -56,7 +56,7 @@ let nonOrganic = false;   //true if open to non-organic treatments
 // TO DO: Add additional treatment options as objects to array
 // TO DO: Add additional information to treatment options: description, instructions, video link,...
 
-let options = [
+let treatmentOptions = [
 	{
 		name: "Apivar",
 		minTemp: "none",     // "none" if treatment has no minimum temperature requirement
@@ -83,18 +83,18 @@ let options = [
 	},
 	{
 		name: "Test1",
-		minTemp: 60,
+		minTemp: 50,
 		maxTemp: 95,
 		honeySupers: true,
-		brood: false,
+		brood: true,
 		organic: true
 	},
 	{
 		name: "Test2",
-		minTemp: 60,
-		maxTemp: 85,		
+		minTemp: 50,
+		maxTemp: 95,		
 		honeySupers: true,
-		brood: true,
+		brood: false,
 		organic: true
 	}
 ]
@@ -102,27 +102,31 @@ let options = [
 
 // Treatments are selected based on the following conditions:
 
-function checkMinTemp(option) {
-	return ((option.minTemp == "none") || (option.minTemp <= minTemp))
+function checkOptions(option) {
+	let flag = false
+	// check for minimum temperature
+ 	if ((option.minTemp == "none") || (option.minTemp <= minTemp)) {
+ 		// check for maximum temperature
+ 		if ((option.maxTemp == "none") || (option.maxTemp >= maxTemp)) {
+ 			// check for honey supers
+ 			if (honeySupers ? option.honeySupers : true) {
+ 				// check for brood
+ 				if (brood ? option.brood : true) {
+ 					// check for organic treatment
+ 					if (nonOrganic ? true : option.organic) {
+ 						flag = true
+ 					}
+ 				}
+ 			}
+ 		}
+ 	}
+	return flag
 }
 
-function checkMaxTemp(option) {
-	return ((option.maxTemp == "none") || (option.maxTemp <= maxTemp))
-}
 
-function checkHoneySupers(option) {
-	return (honeySupers ? option.honeySupers : true)
-}
+// The treatment options selected based on the user input are:
 
-function checkBrood(option) {
-	return (brood ? option.brood : true)
-}
-
-function checkOrganic(option) {
-	return (nonOrganic ? true : option.organic)
-}
-
-let selectionMaxTemp = options.filter(checkMaxTemp)
-console.log(selectionMaxTemp)
+let treatmentSelection = treatmentOptions.filter(checkOptions)
+console.log(treatmentSelection)
 
 
