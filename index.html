@@ -15,29 +15,29 @@
 		<h1>Mites Suck</h1>
 		<hr>
 
-		<form id="input_form">
+		<form id="input_form" onsubmit="return false">
 			<div>
 				<label for="load-input">Mites per 300 Bees (1/2 Cup)</label>
-				<input type="number" id="load-input" name="load" min="0">
+				<input type="number" id="load-input" name="load" min="0" required>
 			</div>
 			<div>
 				<label for="zip-input">Zip code of Apiary</label>
-				<input type="number" id="zip-input" name="zip" min="0" value="27403">
+				<input type="text" pattern="[0-9]{5}" id="zip-input" name="zip" min="0" required="">
 			</div>
 			<div>
 				<label>Are Honey Supers Present?</label>
-				<input type="radio" id="supers-input" name="supers" value="yes">Yes
+				<input type="radio" id="supers-input" name="supers" value="yes" required>Yes
 				<input type="radio" id="supers-input" name="supers" value="no">No<br>
 			</div>
 			<div>
 				<label>Is Brood Present?</label>
-				<input type="radio" id="brood-input" name="brood" value="yes">Yes
+				<input type="radio" id="brood-input" name="brood" value="yes" required="">Yes
 				<input type="radio" id="brood-input" name="brood" value="no">No
 				
 			</div>
 			<div>
 				<label>Are You Open to Non-Organic Treatments?</label>
-				<input type="radio" id="organic-input" name="organic" value="yes">Yes
+				<input type="radio" id="organic-input" name="organic" value="yes" required="">Yes
 				<input type="radio" id="organic-input" name="organic" value="no">No
 			
 			</div>
