@@ -15,36 +15,38 @@
 		<h1>Mites Suck</h1>
 		<hr>
 
-		<form id="input_form" onsubmit="return false">
+		<form id="inputForm" onsubmit="return false">
 			<div>
-				<label for="load-input">Mites per 300 Bees (1/2 Cup)</label>
-				<input type="number" id="load-input" name="load" min="0" required>
+				<label for="loadInput">Mites per 300 Bees (1/2 Cup)</label>
+				<input type="number" id="loadInput" name="load" min="0" required>
 			</div>
 			<div>
-				<label for="zip-input">Zip code of Apiary</label>
-				<input type="text" pattern="[0-9]{5}" id="zip-input" name="zip" min="0" required="">
+				<label for="zipInput">Zip code of Apiary</label>
+				<input type="text" pattern="[0-9]{5}" id="zipInput" name="zip" min="0" required>
+			</div>
+			<div>
+				<label>Is your colony increasing, at peak, decreasing or dormant?</label><br>
+				<input type="radio" name="seasonInput" id="increasing" value="increasing" >Increasing
+				<input type="radio" name="seasonInput" id="peak" value="peak">At Peak
+				<input type="radio" name="seasonInput" id="decreasing" value="decreasing">Decreasing
+				<input type="radio" name="seasonInput" id="dormant" value="dormant">Dormant
+			
 			</div>
 			<div>
 				<label>Are Honey Supers Present?</label>
-				<input type="radio" id="supers-input" name="supers" value="yes" required>Yes
-				<input type="radio" id="supers-input" name="supers" value="no">No<br>
+				<input type="checkbox" id="supersInput" name="supers" value="true">Yes
 			</div>
 			<div>
 				<label>Is Brood Present?</label>
-				<input type="radio" id="brood-input" name="brood" value="yes" required="">Yes
-				<input type="radio" id="brood-input" name="brood" value="no">No
-				
-			</div>
+				<input type="checkbox" id="broodInput" name="brood" value="true">Yes
 			<div>
 				<label>Are You Open to Non-Organic Treatments?</label>
-				<input type="radio" id="organic-input" name="organic" value="yes" required="">Yes
-				<input type="radio" id="organic-input" name="organic" value="no">No
-			
+				<input type="checkbox" id="organicInput" name="organic" value="true">Yes	
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary" onClick=(formSubmit());>Submit</button>
 		</form>
 		<hr>
-		<section id="output_form">
+		<section id="outputForm">
 			<h2>Available Treatments</h2>
 			<div class="treatment card">
 				<h3>Treatment</h3>
@@ -64,10 +66,6 @@
 		<p>Probably should put some contact information here.</p>
 	</footer>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
 </body>
 </html>

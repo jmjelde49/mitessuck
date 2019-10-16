@@ -5,11 +5,11 @@
 // TO DO: Get values for variables from input form and weather API
 
 let miteCount300 = 10;		//number of mites per 300 adult bees (1/2 cup)
-let minTemp = 55;       	//minimum temperature in degree Fahrenheit in x-day weather forecast
-let maxTemp = 91;					//maximum temperature in degree Fahrenheit in x-day weather forecast
-let honeySupers = false;  //true if honey supers present
-let brood = false;       	//true if brood present
-let nonOrganic = false;   //true if open to non-organic treatments
+let minTemp = 60;       	//minimum temperature in degree Fahrenheit in x-day weather forecast
+let maxTemp = 65;			//maximum temperature in degree Fahrenheit in x-day weather forecast
+let honeySupers = false;  	//true if honey supers present
+let brood = true;       	//true if brood present
+let nonOrganic = false;   	//true if open to non-organic treatments
 
 
 // Available treatment options are:
@@ -25,6 +25,14 @@ let treatmentOptions = [
 		honeySupers: false,  // false if treatment cannot be used with honey supers present
 		brood: true,				 // true if treatment can be used with brood present
 		organic: false       // true if treatment is organic
+	},
+		{
+		name: "Queen seclusion",
+		minTemp: "none",
+		maxTemp: "none",
+		honeySupers: false,
+		brood: true,
+		organic: true
 	},
 	{
 		name: "Apistan",
@@ -82,12 +90,43 @@ function checkOptions(option) {
  		}
  	}
 	return flag
-}
-
+} 
 
 // The treatment options selected based on the user input are:
 
 let treatmentSelection = treatmentOptions.filter(checkOptions)
 console.log(treatmentSelection)
+
+//Retrieve values on form submit
+
+function formSubmit(){
+	var input = {
+		miteCount300: document.getElementById("loadInput").value,
+		zip: document.getElementById("zipInput").value,
+		season: "increasing",
+		supers: false, 
+ 		brood: false,
+ 		organic: false
+ 	};
+ 	//loop through radio button to get correct value
+ 	//there may be a more efficient way to do this, bypassing this section if the colony is increasing
+ 	if (document.getElementById("dormant").checked)
+ 		{input.season="dormant"}
+ 	else if (document.getElementById("peak").checked)
+ 		{input.season="peak"}
+	else if (document.getElementById("decreasing").checked)
+		{input.season="decreasing"}
+	
+ 	if (document.getElementById("supersInput").checked)
+ 		{input.supers = true};
+ 	if (document.getElementById("broodInput").checked)
+ 		{input.brood = true};
+ 	if (document.getElementById("organicInput").checked)
+ 		{input.organic = true};
+ 	console.log(input);
+ }
+
+
+
 
 
