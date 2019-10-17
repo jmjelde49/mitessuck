@@ -1,5 +1,14 @@
-// Treatment options are selected based on the following variables:
-
+// TO DO: Produce form for mite treatment inputs for researchers
+// TO DO: Find researchers
+// TO DO: Add treatments from completed forms
+// TO DO: Print accepted treatments to the DOM
+// TO DO: Add time marker/version stamp to DOM
+// TO DO: Get min/max temps from weather api based on zip code
+// TO DO: Styling/appearance
+// TO DO: Add seasonality logic
+// TO DO: Add additional treatment options as objects to array
+// TO DO: Add additional information to treatment options: description, instructions, video link,...
+// TO DO: Discuss, is there a more efficient way to get inputs from checkboxes and radio buttons?
 // QUESTION: Do we need to take any other variable, like season, into account?
 // Answer:  Yes. THe HBC app does this by asking if the colony is increasing, decreasing, stable or in cluster. 
 // TO DO: Get values for variables from input form and weather API
@@ -14,8 +23,7 @@ let nonOrganic = false;   	//true if open to non-organic treatments
 
 // Available treatment options are:
 
-// TO DO: Add additional treatment options as objects to array
-// TO DO: Add additional information to treatment options: description, instructions, video link,...
+
 
 let treatmentOptions = [
 	{
@@ -30,7 +38,7 @@ let treatmentOptions = [
 		name: "Queen seclusion",
 		minTemp: "none",
 		maxTemp: "none",
-		honeySupers: false,
+		honeySupers: true,
 		brood: true,
 		organic: true
 	},
@@ -109,7 +117,7 @@ function formSubmit(){
  		organic: false
  	};
  	//loop through radio button to get correct value
- 	//there may be a more efficient way to do this, bypassing this section if the colony is increasing
+ 	
  	if (document.getElementById("dormant").checked)
  		{input.season="dormant"}
  	else if (document.getElementById("peak").checked)
