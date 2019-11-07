@@ -18,7 +18,7 @@ let minTemp = 60;       	//minimum temperature in degree Fahrenheit in x-day wea
 let maxTemp = 65;			//maximum temperature in degree Fahrenheit in x-day weather forecast
 let honeySupers = false;  	//true if honey supers present
 let brood = true;       	//true if brood present
-let nonOrganic = false;   	//true if open to non-organic treatments
+let nonSynthetic = false;   	//true if open to non-synthetic treatments
 
 
 // Available treatment options are:
@@ -32,7 +32,7 @@ let treatmentOptions = [
 		maxTemp: "none",     // "none" if treatment has no maximum temperature requirement
 		honeySupers: false,  // false if treatment cannot be used with honey supers present
 		brood: true,				 // true if treatment can be used with brood present
-		organic: false       // true if treatment is organic
+		synthetic: false       // true if treatment is synthetic
 	},
 		{
 		name: "Queen seclusion",
@@ -40,7 +40,7 @@ let treatmentOptions = [
 		maxTemp: "none",
 		honeySupers: true,
 		brood: true,
-		organic: true
+		synthetic: true
 	},
 	{
 		name: "Apistan",
@@ -48,7 +48,7 @@ let treatmentOptions = [
 		maxTemp: "none",
 		honeySupers: false,
 		brood: true,
-		organic: false
+		synthetic: false
 	},
 	{
 		name: "CheckMite",
@@ -56,7 +56,7 @@ let treatmentOptions = [
 		maxTemp: "none",
 		honeySupers: false,
 		brood: true,
-		organic: false
+		synthetic: false
 	},
 	{
 		name: "Test1",
@@ -64,7 +64,7 @@ let treatmentOptions = [
 		maxTemp: 95,
 		honeySupers: true,
 		brood: true,
-		organic: true
+		synthetic: true
 	},
 	{
 		name: "Test2",
@@ -72,7 +72,7 @@ let treatmentOptions = [
 		maxTemp: 95,		
 		honeySupers: true,
 		brood: false,
-		organic: true
+		synthetic: true
 	}
 ]
 
@@ -89,8 +89,8 @@ function checkOptions(option) {
  			if (honeySupers ? option.honeySupers : true) {
  				// check for brood
  				if (brood ? option.brood : true) {
- 					// check for organic treatment
- 					if (nonOrganic ? true : option.organic) {
+ 					// check for Synthetic treatment
+ 					if (nonSynthetic ? true : option.Synthetic) {
  						flag = true
  					}
  				}
@@ -114,7 +114,7 @@ function formSubmit(){
 		season: "increasing",
 		supers: false, 
  		brood: false,
- 		organic: false
+ 		synthetic: false
  	};
  	//loop through radio button to get correct value
  	
@@ -129,8 +129,8 @@ function formSubmit(){
  		{input.supers = true};
  	if (document.getElementById("broodInput").checked)
  		{input.brood = true};
- 	if (document.getElementById("organicInput").checked)
- 		{input.organic = true};
+ 	if (document.getElementById("syntheticInput").checked)
+ 		{input.synthetic = true};
  	console.log(input);
  }
 
