@@ -43,12 +43,13 @@
 				<label>Are You Open to Non-Organic Treatments?</label>
 				<input type="checkbox" id="organicInput" name="organic" value="true">Yes	
 			</div>
-			<button type="submit" class="btn btn-primary" onClick=(formSubmit());>Submit</button>
+			<button type="submit" onClick=(formSubmit());>Submit</button>
+			<button type="submit" onClick=(displayTreatments());>Display Treatments</button>
 		</form>
 		<hr>
 		<section id="outputForm">
 			<h2>Available Treatments</h2>
-			<div class="treatment card">
+			<div class="treatment" id="treatment">
 				<h3>Treatment</h3>
 				<ul>
 					<li id="description">Description</li>
@@ -58,6 +59,7 @@
 					<li id="more">More information</li>
 				</ul>
 			</div>
+
 		</section>
 	</main>
 	
@@ -65,6 +67,9 @@
 	<footer id="footer">
 		<p>Probably should put some contact information here.</p>
 	</footer>
+	<script type="text/javascript">
+		console.log(document.getElementById("treatment"));
+	</script>
 
 	
 </body>

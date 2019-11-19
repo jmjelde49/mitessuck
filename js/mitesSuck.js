@@ -12,17 +12,17 @@
 // QUESTION: Do we need to take any other variable, like season, into account?
 // Answer:  Yes. THe HBC app does this by asking if the colony is increasing, decreasing, stable or in cluster. 
 // TO DO: Get values for variables from input form and weather API
+// TO DO: Move mite treatments to database. This may require a lot of discussion on the reasoning for it
 
 let miteCount300 = 10;		//number of mites per 300 adult bees (1/2 cup)
-let minTemp = 60;       	//minimum temperature in degree Fahrenheit in x-day weather forecast
-let maxTemp = 65;			//maximum temperature in degree Fahrenheit in x-day weather forecast
+let minTemp = 60;       	//minimum temperature in degree Fahrenheit in 3-day weather forecast
+let maxTemp = 65;			//maximum temperature in degree Fahrenheit in 3-day weather forecast
 let honeySupers = false;  	//true if honey supers present
 let brood = true;       	//true if brood present
 let nonOrganic = false;   	//true if open to non-organic treatments
 
 
 // Available treatment options are:
-
 
 
 let treatmentOptions = [
@@ -76,7 +76,6 @@ let treatmentOptions = [
 	}
 ]
 
-
 // Treatments are selected based on the following conditions:
 
 function checkOptions(option) {
@@ -103,7 +102,7 @@ function checkOptions(option) {
 // The treatment options selected based on the user input are:
 
 let treatmentSelection = treatmentOptions.filter(checkOptions)
-console.log(treatmentSelection)
+//console.log(treatmentSelection)
 
 //Retrieve values on form submit
 
@@ -117,7 +116,7 @@ function formSubmit(){
  		organic: false
  	};
  	//loop through radio button to get correct value
- 	
+
  	if (document.getElementById("dormant").checked)
  		{input.season="dormant"}
  	else if (document.getElementById("peak").checked)
@@ -132,6 +131,10 @@ function formSubmit(){
  	if (document.getElementById("organicInput").checked)
  		{input.organic = true};
  	console.log(input);
+ }
+
+ function displayTreatments(){
+	document.getElementById("treatment").style.display="none";
  }
 
 

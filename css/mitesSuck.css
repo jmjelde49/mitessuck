@@ -20,10 +20,11 @@ a:hover{
 li{
 	list-style-type: none;
 }
-.treatment{
+.treatment{	
 	width:250px;
 	padding: 20px;
 	border: 2px solid black;
+	margin: 10px;
 }
 #zip-input{
 	
