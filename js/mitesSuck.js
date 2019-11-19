@@ -131,11 +131,13 @@ function formSubmit(){
  	if (document.getElementById("syntheticInput").checked)
  		{input.synthetic = true};
  	console.log(input);
+ 	document.getElementById("name").innerHTML = treatmentOptions[0].name;
  }
 
- function displayTreatments(){
-	document.getElementById("treatment").style.display="none";
- }
+ //function displayTreatments(){
+ //	document.getElementById("name").innerHTML = treatmentOptions[0].name;
+
+ //}
 
 
 

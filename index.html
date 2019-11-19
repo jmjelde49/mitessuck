@@ -44,13 +44,13 @@
 				<input type="checkbox" id="syntheticInput" name="synthetic" value="true">Yes	
 			</div>
 			<button type="submit" onClick=(formSubmit());>Submit</button>
-			<button type="submit" onClick=(displayTreatments());>Display Treatments</button>
+			<!--<button type="submit" onClick=(displayTreatments());>Display Treatments</button>-->
 		</form>
 		<hr>
 		<section id="outputForm">
 			<h2>Available Treatments</h2>
 			<div class="treatment" id="treatment">
-				<h3>Treatment</h3>
+				<h3 id="name">Treatment</h3>
 				<ul>
 					<li id="description">Description</li>
 					<li id="instructions">Instructions for use</li>
@@ -67,10 +67,6 @@
 	<footer id="footer">
 		<p>Probably should put some contact information here.</p>
 	</footer>
-	<script type="text/javascript">
-		console.log(document.getElementById("treatment"));
-	</script>
-
 	
 </body>
 </html>
