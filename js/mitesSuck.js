@@ -3,7 +3,7 @@
 // TO DO: Add treatments from completed forms
 // TO DO: Print accepted treatments to the DOM
 // TO DO: Add time marker/version stamp to DOM
-// TO DO: Get min/max temps from weather api based on zip code
+// TO DO: Get min/max temps from weather api based on zip code (https://openweathermap.org)
 // TO DO: Styling/appearance
 // TO DO: Add seasonality logic
 // TO DO: Add additional treatment options as objects to array
