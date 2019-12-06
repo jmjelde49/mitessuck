@@ -17,15 +17,15 @@
 
 		<form id="inputForm" onsubmit="return false">
 			<div>
-				<label for="loadInput">Mites per 300 Bees (1/2 Cup)</label>
+				<label for="loadInput">Mites per 300 bees (1/2 cup)</label>
 				<input type="number" id="loadInput" name="load" min="0" required>
 			</div>
 			<div>
-				<label for="zipInput">Zip code of Apiary</label>
+				<label for="zipInput">ZIP code of apiary</label>
 				<input type="text" pattern="[0-9]{5}" id="zipInput" name="zip" min="0" required>
 			</div>
 			<div>
-				<label>Is your colony increasing, at peak, decreasing or dormant?</label><br>
+				<label>Is your colony:</label><br>
 				<input type="radio" name="seasonInput" id="increasing" value="increasing" >Increasing
 				<input type="radio" name="seasonInput" id="peak" value="peak">At Peak
 				<input type="radio" name="seasonInput" id="decreasing" value="decreasing">Decreasing
@@ -33,15 +33,12 @@
 			
 			</div>
 			<div>
-				<label>Are Honey Supers Present?</label>
-				<input type="checkbox" id="supersInput" name="supers" value="true">Yes
+				<input type="checkbox" id="supersInput" name="supers" value="true">Are honey supers present?
 			</div>
 			<div>
-				<label>Is Brood Present?</label>
-				<input type="checkbox" id="broodInput" name="brood" value="true">Yes
+				<input type="checkbox" id="broodInput" name="brood" value="true">Is brood present?
 			<div>
-				<label>Are You Open to Synthetic Treatments?</label>
-				<input type="checkbox" id="syntheticInput" name="synthetic" value="true">Yes	
+				<input type="checkbox" id="syntheticInput" name="synthetic" value="true">Are you open to synthetic treatments?	
 			</div>
 			<button type="submit" onClick=(formSubmit());>Submit</button>
 			<!--<button type="submit" onClick=(displayTreatments());>Display Treatments</button>-->
