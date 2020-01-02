@@ -99,6 +99,19 @@ function checkOptions(option) {
 	return flag
 } 
 
+// getTemps takes zipcode on submit, retrieves date from date of submit and returns min and max temperatures over next 72 hours as reported from the API 
+function getTemps(zipInput){
+	var min, max;
+	return (min, max);
+}
+
+//getThreshhold takes in seasonInput, retrieves date from date of submit and returns maximum mite threshhold
+function getThreshold(seasonInput){
+	var threshhold;
+	return(threshhold);
+}
+
+
 // The treatment options selected based on the user input are:
 
 let treatmentSelection = treatmentOptions.filter(checkOptions)
