@@ -24,27 +24,50 @@
 				<label for="zipInput">Zip code of Apiary</label>
 				<input type="text" pattern="[0-9]{5}" id="zipInput" name="zip" min="0" required>
 			</div>
-			<div>
-				<label>Is your colony increasing, at peak, decreasing or dormant?</label><br>
-				<input type="radio" name="seasonInput" id="increasing" value="increasing" >Increasing
-				<input type="radio" name="seasonInput" id="peak" value="peak">At Peak
-				<input type="radio" name="seasonInput" id="decreasing" value="decreasing">Decreasing
-				<input type="radio" name="seasonInput" id="dormant" value="dormant">Dormant
 			
-			</div>
+	
 			<div>
-				<label>Are Honey Supers Present?</label>
-				<input type="checkbox" id="supersInput" name="supers" value="true">Yes
+				<label>Is your colony Increasing or Decreasing?</label>
+			  <input type="radio" name="seasonInput" id="increasing" value="increasing" >Increasing
+				<input type="radio" name="seasonInput" id="decreasing" value="decreasing">Decreasing
 			</div>
-			<div>
-				<label>Is Brood Present?</label>
-				<input type="checkbox" id="broodInput" name="brood" value="true">Yes
-			<div>
-				<label>Are You Open to Synthetic Treatments?</label>
-				<input type="checkbox" id="syntheticInput" name="synthetic" value="true">Yes	
+			
+		  <div>
+		    <label>Is your colony at Peak?</label>
+		    <input type="radio" name="peakInput" id="peakYes" value="peakYes" >Yes
+				<input type="radio" name="peakInput" id="peakNo" value="peakNo">No
 			</div>
-			<button type="submit" onClick=(formSubmit());>Submit</button>
-			<!--<button type="submit" onClick=(displayTreatments());>Display Treatments</button>-->
+			
+			<div>
+			  <label>Is your colony at Dormant?</label>
+			  <input type="radio" name="dormantInput" id="dormantYes" value="dormantYes" >
+			  Yes
+				<input type="radio" name="dormantInput" id="dormantNo" value="dormantNo">No
+		  </div>
+			
+		  <div>
+		    <label>Are Honey Supers present?</label>
+		    <input type="radio" name="supersInput" id="supersYes" value="supersYes" >Yes
+				<input type="radio" name="supersInput" id="supersNo" value="supersNo">No
+			</div>
+			
+			<div>
+			  <label>Are Brood present?</label>
+			  <input type="radio" name="brood" id="broodYes" value="broodYes">Yes
+				<input type="radio" name="brood" id="broodNo" value="broodNo">No
+			</div>
+			
+		  <div>
+		    <label>Are you open to Synthetic Treatments?</label>
+		    <input type="radio" name="synthetic" id="syntheticYes" value="syntheticYes">
+		    Yes
+			<input type="radio" name="synthetic" id="syntheticNo" value="syntheticNo">No
+		  </div>
+				
+				
+		  <button type="submit" onClick= "displayTreatments()">Submit</button>
+			
+		  <!--<button type="submit" onClick=(displayTreatments());>Display Treatments</button>-->
 		</form>
 		<hr>
 		<section id="outputForm">
