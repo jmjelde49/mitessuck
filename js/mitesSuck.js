@@ -15,66 +15,45 @@
 // TO DO: Move mite treatments to database. This may require a lot of discussion on the reasoning for it
 
 let miteCount300 = 10;		//number of mites per 300 adult bees (1/2 cup)
+
+
 let minTemp = 60;       	//minimum temperature in degree Fahrenheit in 3-day weather forecast
 let maxTemp = 65;			//maximum temperature in degree Fahrenheit in 3-day weather forecast
-let honeySupers = false;  	//true if honey supers present
-let brood = true;       	//true if brood present
-let nonSynthetic = false;   	//true if open to non-synthetic treatments
 
 
-// Available treatment options are:
 
+// Treatments are selected based on the following conditions:
 
-let treatmentOptions = [
-	{
-		name: "Apivar",
-		minTemp: "none",     // "none" if treatment has no minimum temperature requirement
-		maxTemp: "none",     // "none" if treatment has no maximum temperature requirement
-		honeySupers: false,  // false if treatment cannot be used with honey supers present
-		brood: true,				 // true if treatment can be used with brood present
-		synthetic: false       // true if treatment is synthetic
-	},
-		{
-		name: "Queen seclusion",
-		minTemp: "none",
-		maxTemp: "none",
-		honeySupers: true,
-		brood: true,
-		synthetic: true
-	},
-	{
-		name: "Apistan",
-		minTemp: 50,
-		maxTemp: "none",
-		honeySupers: false,
-		brood: true,
-		synthetic: false
-	},
-	{
-		name: "CheckMite",
-		minTemp: "none",
-		maxTemp: "none",
-		honeySupers: false,
-		brood: true,
-		synthetic: false
-	},
-	{
-		name: "Test1",
-		minTemp: 50,
-		maxTemp: 95,
-		honeySupers: true,
-		brood: true,
-		synthetic: true
-	},
-	{
-		name: "Test2",
-		minTemp: 50,
-		maxTemp: 95,		
-		honeySupers: true,
-		brood: false,
-		synthetic: true
+if 	(supersInput = "supersYes" || broodInput = "broodYes" || syntheticInput = "syntheticYes" || increasingInput = "increasingYes" || decreasingInput = "decreasingYes" || peakInput = "peakNo" || dormantInput = "dormantNo") {
+	
+	let treatmentOptionA = "Aprivar";
+	
+	if (temp >= minTemp) {
+		
+		let treatmentOptionB = "Apistan"
 	}
-]
+	
+}
+
+
+else if (supersInput = "supersNo" || broodInput = "broodNo" || syntheticInput = "syntheticNo" || increasingInput = "increasingNo" decreasingInput = "decreasingYes" || peakInput = "peakNo" || dormantInput = "dormantYes" ) {
+	
+	let treatmentOptionA = "Oxalic (AP-Bioxal) (Dribble)";
+	let treatmentOptionB = "Oxalic (AP-Bioxal) (Vaporization)";
+	let treatmentOptionC = "Oxalic (AP-Bioxal) (Spray Package Bees)";
+	
+} 
+
+
+else if (supersInput = "supersYes" || broodInput = "broodYes" || syntheticInput = "syntheticNo" || increasingInput = "increasingYes" || decreasingInput = "decreasingYes"|| peakInput = "peakYes" || dormantInput = "dormantNo" || temp >= minTemp || temp <= maxTemp) {
+	
+	let treatmentOptionA = "Mite-Away Quick Strips";
+	let treatmentOptionB = "FormicPro";
+	
+} 
+
+
+
 
 // Treatments are selected based on the following conditions:
 
