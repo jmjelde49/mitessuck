@@ -22,41 +22,51 @@
 		<a class="navbar-brand" href="#"><h1>Mitessuck</h1></a>
 	</header>
 
-	<main>
-		
-		
+	<main class="container-fluid">
 
-		<form id="inputForm" onsubmit="return false">
-			<div>
-				<label for="loadInput">Mites per 300 bees (1/2 cup)</label>
-				<input type="number" id="loadInput" name="load" min="0" required>
-			</div>
-			<div>
-				<label for="zipInput">ZIP code of apiary</label>
-				<input type="text" pattern="[0-9]{5}" id="zipInput" name="zip" min="0" required>
-			</div>
-			<div>
-				<label>Is your colony:</label><br>
-				<input type="radio" name="seasonInput" id="increasing" value="increasing" >Increasing
-				<input type="radio" name="seasonInput" id="peak" value="peak">At Peak
-				<input type="radio" name="seasonInput" id="decreasing" value="decreasing">Decreasing
-				<input type="radio" name="seasonInput" id="dormant" value="dormant">Dormant
-			
-			</div>
-			<div>
-				<input type="checkbox" id="supersInput" name="supers" value="true">Are honey supers present?
-			</div>
-			<div>
-				<input type="checkbox" id="broodInput" name="brood" value="true">Is brood present?
-			<div>
-				<input type="checkbox" id="syntheticInput" name="synthetic" value="true">Are you open to synthetic treatments?	
-			</div>
-			<button type="submit" onClick=(formSubmit());>Submit</button>
-			<!--<button type="submit" onClick=(displayTreatments());>Display Treatments</button>-->
-		</form>
-		<hr>
+		<!-- Introduction -->
+		<section>
+			<h2>Short paragraph about what the hell this page does.</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</section>
+		
+		<!-- Input Form -->
+		<section>
+			<h2>Tell us about your apiary</h2>
+			<form id="inputForm" onsubmit="return false">
+				<div>
+					<label for="loadInput">Number of mites per 300 bees (1/2 cup)</label>
+					<input type="number" id="loadInput" name="load" min="0" required>
+				</div>
+				<div>
+					<label for="zipInput">What is the Zip code of the hive?</label>
+					<input type="text" pattern="[0-9]{5}" id="zipInput" name="zip" min="0" required>
+				</div>
+				<div>
+					<label>Is your colony:</label><br>
+					<input type="radio" name="seasonInput" id="increasing" value="increasing" >Increasing
+					<input type="radio" name="seasonInput" id="peak" value="peak">At Peak
+					<input type="radio" name="seasonInput" id="decreasing" value="decreasing">Decreasing
+					<input type="radio" name="seasonInput" id="dormant" value="dormant">Dormant
+				</div>
+				<div>
+					<input type="checkbox" id="supersInput" name="supers" value="true">Are honey supers present?
+				</div>
+				<div>
+					<input type="checkbox" id="broodInput" name="brood" value="true">Do you have brood?
+				<div>
+					<input type="checkbox" id="syntheticInput" name="synthetic" value="true">Are you open to synthetic treatments?	
+				</div>
+				<button type="submit" onClick=(formSubmit());>Submit</button>
+				<!--<button type="submit" onClick=(displayTreatments());>Display Treatments</button>-->
+			</form>
+		</section>
+		
+		<!-- Treatment Recommendations -->
 		<section id="outputForm">
-			<h2>Available Treatments</h2>
+			<h2>Recommended Treatment Options</h2>
+			<p>Based on your information, we recommend you look into the following treatment options:</p>
+
 			<div class="treatment" id="treatment">
 				<h3 id="name">Treatment</h3>
 				<ul>
