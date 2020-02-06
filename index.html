@@ -18,20 +18,20 @@
 </head>
 <body>
 	<!-- Bootstrap Navbar -->
-	<header class="navbar navbar-light bg-light">
+	<header class="navbar navbar-light" style="background-color: rgba(0, 0, 0, 0.2)" >
 		<a class="navbar-brand" href="#"><h1>Mitessuck</h1></a>
 	</header>
 
-	<main class="container-fluid" style="background-image: url('graphics/varroa.png'); background-repeat: no-repeat; background-position: center">
+	<main class="container-fluid" style="background-image: url('graphics/varroa.png');background-repeat: no-repeat; background-position: center" >
 
 		<!-- Introduction -->
-		<section>
+		<section style="margin: 10px; padding: 30px;  background-color: rgba(0, 0, 0, 0.1);">
 			<h2>Short paragraph about what the hell this page does.</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 		</section>
 		
 		<!-- Input Form -->
-		<section>
+		<section style="margin: 10px; padding: 30px;  background-color: rgba(0, 0, 0, 0.1);">
 			<h2>Tell us about your apiary</h2>
 			<form id="inputForm" onsubmit="return false">
 				<div>
@@ -57,13 +57,16 @@
 				<div>
 					<input type="checkbox" id="syntheticInput" name="synthetic" value="true">Are you open to synthetic treatments?	
 				</div>
-				<button type="submit" onClick=(formSubmit());>Submit</button>
+				<div style="padding: 20px 250px">
+					<button  type="button" class="btn btn-warning" onClick=(formSubmit()); >Submit</button>
 				<!--<button type="submit" onClick=(displayTreatments());>Display Treatments</button>-->
+				</div>
+	
 			</form>
 		</section>
 		
 		<!-- Treatment Recommendations -->
-		<section id="outputForm">
+		<section id="outputForm" style="margin: 10px; padding: 30px;  background-color: rgba(0, 0, 0, 0.1);">
 
 			<div class="treatment" id="treatment">
 				<h3 id="name">Treatment</h3>
@@ -80,7 +83,7 @@
 	</main>
 
 	<!-- Bootstrap Navbar -->
-	<footer class="navbar fixed-bottom navbar-expand justify-content-center navbar-light bg-light">
+	<footer class="navbar fixed-bottom navbar-expand justify-content-center navbar-light" style="background-color: rgba(0, 0, 0, 0.2)">
 		<ul class="navbar-nav">
 			<li class="nav-item">
 				<a class="nav-link px-5" href="https://honeybeehealthcoalition.org" target="_blank"><img src="graphics/hbhc.png" height=50px alt="" padding=10px></a>
